@@ -1,16 +1,22 @@
+import { Container, Info, InfoWrapper } from './QuizCard.styled';
+import { FaTrashCan } from 'react-icons/fa6';
+
 export const QuizCard = ({
   quiz: { id, topic, level, time, questions },
   onDelete,
 }) => {
   return (
-    <div>
+    <Container level={level}>
       <h2>{topic}</h2>
-      <div>
-        <p>Level: {level}</p>
-        <p>Time: {time} min</p>
-        <p>Questions: {questions}</p>
-        <button onClick={() => onDelete(id)}>Delete</button>
-      </div>
-    </div>
+      <button onClick={() => onDelete(id)}>
+        Delete
+        <FaTrashCan />
+      </button>
+      <InfoWrapper>
+        <Info>Level: {level}</Info>
+        <Info>Time: {time} min</Info>
+        <Info>Questions: {questions}</Info>
+      </InfoWrapper>
+    </Container>
   );
 };
