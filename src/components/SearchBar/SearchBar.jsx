@@ -3,6 +3,7 @@ export const SearchBar = ({
   // onChangeTopic,
   // onChangeLevel,
   onchangeFilter,
+  onResetFilter,
 }) => {
   return (
     <div>
@@ -21,6 +22,7 @@ export const SearchBar = ({
         <option value="intermediate">Intermediate</option>
         <option value="advanced">Advanced</option>
       </select>
+      <button onClick={onResetFilter}>Reset Filter</button>
     </div>
   );
 };
